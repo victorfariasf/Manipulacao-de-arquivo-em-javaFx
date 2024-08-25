@@ -1,0 +1,12 @@
+andrade	FFFVVVVFVF	6
+aurelio	FFVVFVFVF	2
+laurilene	FFFVVVFVFV	2
+link	FFFVVFVFVFV	5
+luigi	FFFVVVFVFV	2
+marcio	FFFVVVFVFV	2
+marilia	FFFVFVFVFV	1
+murilo	FFFFFFFFVF	4
+victor	FFFVVVFFVFV	5
+vladimir	FFFVFVVFVF	5
+zildo	FFVVVFVFVF	6
+

@@ -18,10 +18,13 @@ public class App extends Application {
     private static Scene gabaritoScene;
     private static Scene dadosAlunosScene;
     private static Scene mostrarAlunosScene;
+    private static Scene mainAtualizadaScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
+        Parent fxmlMainAtualizada = FXMLLoader.load(getClass().getResource("fxml/mainAtualizada.fxml"));
+        mainAtualizadaScene = new Scene(fxmlMainAtualizada);
 
         Parent fxmlMain = FXMLLoader.load(getClass().getResource("fxml/main.fxml"));
         mainScene = new Scene(fxmlMain);
@@ -35,13 +38,17 @@ public class App extends Application {
         Parent fxmlMostrarAlunos = FXMLLoader.load(getClass().getResource("fxml/mostrarAlunos.fxml"));
         mostrarAlunosScene = new Scene(fxmlMostrarAlunos);
 
-        primaryStage.setScene(mainScene);
+        primaryStage.setScene(mainAtualizadaScene);
         primaryStage.setTitle("Bem-vindo");
         primaryStage.show();
     }
 
     public static void changeScreen(String scr, Object userData) {
         switch (scr) {
+            case "mainAtualizada":
+                stage.setScene(mainAtualizadaScene);
+                notifyAllListeners("mainAtualizada", userData);
+                break;
             case "main":
                 stage.setScene(mainScene);
                 notifyAllListeners("main", userData);

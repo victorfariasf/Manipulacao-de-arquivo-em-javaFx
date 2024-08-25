@@ -4,7 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import java.util.ArrayList;
 
-public class mostrarAlunosController {
+public class MostrarAlunosController {
 
     Fachada fachada = new Fachada();
     ArrayList<String> alunos = new ArrayList<>();
@@ -229,7 +229,7 @@ public class mostrarAlunosController {
 
     @FXML
     void sairOnAction(ActionEvent event) {
-        App.changeScreen("main", null);
+        App.changeScreen("mainAtualizada", null);
     }
 
 }

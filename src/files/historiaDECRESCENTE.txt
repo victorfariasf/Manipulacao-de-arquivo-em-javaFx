@@ -1,0 +1,4 @@
+victor	VVVVVVVVVF	10
+christian	VVVFVVFVFV	6
+laura	FFFFFFFFFV	0
+

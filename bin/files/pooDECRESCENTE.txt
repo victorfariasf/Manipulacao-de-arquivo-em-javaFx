@@ -9,4 +9,5 @@ laurilene	FFFVVVFVFV	2
 luigi	FFFVVVFVFV	2
 marcio	FFFVVVFVFV	2
 marilia	FFFVFVFVFV	1
+nathan	VFFVFFFVFV	1
 

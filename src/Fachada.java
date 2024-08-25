@@ -74,4 +74,60 @@ public class Fachada {
         return arquivo.calcularMediaGeral(null, alunos);
     }
 
+    /*
+     * public String verificarArquivos() {
+     * File pasta = new File("src/files");
+     * if (pasta.exists() && pasta.isDirectory()) {
+     * File[] arquivos = pasta.listFiles((dir, nome) -> nome.endsWith(".txt"));
+     * 
+     * if (arquivos != null) {
+     * for (File x : arquivos) {
+     * String nomeArquivo = x.getName();
+     * String nomeSemExtensão = nomeArquivo.substring(0,
+     * nomeArquivo.lastIndexOf("."));
+     * 
+     * if (!nomeSemExtensão.contains("GABARITO") &&
+     * !nomeSemExtensão.contains("ALFABETICA")
+     * && !nomeSemExtensão.contains("DECRESCENTE")) {
+     * return nomeSemExtensão;
+     * }
+     * }
+     * 
+     * } else {
+     * System.out.println("Nenhum arquivo encontrado na pasta");
+     * }
+     * } else {
+     * System.out.println("Pasta não encontrada");
+     * }
+     * return null;
+     * }
+     */
+
+    public ArrayList<String> verificarArquivos() {
+        ArrayList<String> nomesDisciplinas = new ArrayList<>();
+        File pasta = new File("src/files/");
+
+        if (pasta.exists() && pasta.isDirectory()) {
+            File[] arquivos = pasta.listFiles((dir, nome) -> nome.endsWith(".txt"));
+
+            if (arquivos != null) {
+                for (File x : arquivos) {
+                    String nomeArquivo = x.getName();
+                    String nomeSemExtensão = nomeArquivo.substring(0, nomeArquivo.lastIndexOf("."));
+                    System.out.println(x);
+                    if (!nomeSemExtensão.contains("GABARITO") && !nomeSemExtensão.contains("ALFABETICA")
+                            && !nomeSemExtensão.contains("DECRESCENTE")) {
+                        System.out.println(nomeSemExtensão);
+                        nomesDisciplinas.add(nomeSemExtensão);
+                    }
+                }
+            } else {
+                System.out.println("Nenhum arquivo encontrado na pasta");
+            }
+        } else {
+            System.out.println("Pasta não encontrada");
+        }
+
+        return nomesDisciplinas;
+    }
 }

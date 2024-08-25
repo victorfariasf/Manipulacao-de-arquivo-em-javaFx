@@ -34,7 +34,7 @@ public class DadosAlunosController {
 
     @FXML
     void encerrarOnAction(ActionEvent event) {
-        App.changeScreen("main");
+        App.changeScreen("mainAtualizada");
     }
 
     @FXML

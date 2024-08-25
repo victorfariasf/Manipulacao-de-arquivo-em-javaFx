@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
-public class mainController {
+public class MainController {
 
     @FXML
     protected void initialize() {
@@ -36,6 +36,14 @@ public class mainController {
             App.changeScreen("gabarito", disciplina);
         }
 
+    }
+
+    @FXML
+    private Button voltarBtn;
+
+    @FXML
+    void voltarOnAction(ActionEvent event) {
+        App.changeScreen("mainAtualizada");
     }
 
 }

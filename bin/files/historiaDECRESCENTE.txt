@@ -1,4 +1,5 @@
 victor	VVVVVVVVVF	10
+marcola	VVVFVVFVFF	7
 christian	VVVFVVFVFV	6
 laura	FFFFFFFFFV	0
 

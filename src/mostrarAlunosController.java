@@ -19,7 +19,8 @@ public class MostrarAlunosController {
             public void onScreenChanged(String newScreen, Object userData) {
                 disciplina = (String) userData;
                 alunos = fachada.lerDisciplinaJavaFx(disciplina);
-                alunosObj = fachada.transformarParaObjeto(alunos, disciplina);
+                String gabarito = fachada.lerAlgumDadoDoArquivoJavaFx(disciplina + "GABARITO");
+                alunosObj = fachada.StringParaObjetoAluno(alunos, gabarito);
                 for (Aluno x : alunosObj) {
                     System.out.println(x.toString());
                 }

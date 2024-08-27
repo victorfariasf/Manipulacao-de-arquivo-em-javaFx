@@ -1,7 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-
+import javafx.scene.control.Label;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +13,24 @@ public class MainAtualizadaController {
 
     @FXML
     protected void initialize() {
-        listaMaterias = fachada.verificarArquivos();
+        listaMaterias = fachada.acessoAsDisciplinas();
         organizarBtn();
+        App.addOnChangeScreenListener(new App.OnChangeScreen() {
+            @Override
+            public void onScreenChanged(String newScreen, Object userData) {
+                if (newScreen.equals("mainAtualizada")) {
+                    System.out.println("oi");
+                    listaMaterias = fachada.acessoAsDisciplinas();
+                    organizarBtn();
+                }
+
+            }
+
+        });
     }
+
+    @FXML
+    private Label materiasLabel;
 
     public void organizarBtn() {
 
@@ -23,7 +38,7 @@ public class MainAtualizadaController {
         int fim = Math.min(inicio + MAX_POR_PAGINA, listaMaterias.size());
 
         // Lista de botões para facilitar a iteração
-        List<Button> botoes = List.of(btn1, btn2, btn3, btn4, btn5, btn6);
+        List<Button> botoes = List.of(btn1, btn2, btn3, btn4, btn5);
 
         // Limpar todos os botões
         botoes.forEach(btn -> {
@@ -60,9 +75,6 @@ public class MainAtualizadaController {
     private Button btn5;
 
     @FXML
-    private Button btn6;
-
-    @FXML
     private Button proximoBtn;
 
     @FXML
@@ -73,7 +85,7 @@ public class MainAtualizadaController {
 
     @FXML
     void adicionarDisciplinaOnAction(ActionEvent event) {
-        App.changeScreen("main", event);
+        App.changeScreen("main");
     }
 
     @FXML
@@ -106,13 +118,6 @@ public class MainAtualizadaController {
 
     @FXML
     void btn5OnAction(ActionEvent event) {
-        Button clickedBtn = (Button) event.getSource();
-        String buttonText = clickedBtn.getText();
-        App.changeScreen("mostrarAlunos", buttonText);
-    }
-
-    @FXML
-    void btn6OnAction(ActionEvent event) {
         Button clickedBtn = (Button) event.getSource();
         String buttonText = clickedBtn.getText();
         App.changeScreen("mostrarAlunos", buttonText);
